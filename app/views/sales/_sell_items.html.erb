@@ -1,0 +1,29 @@
+<div class="table-responsive">
+  <table class="table table-hover" id="table-sale-items">
+    <thead>
+          <tr>
+            <th>Name</th>
+            <th>Part No</th>
+            <th>Selling Price</th>
+            <th>Quantity Available</th>
+            <th>Quantity Ordered</th>
+            <th>Add to Order</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @items.each do |item| %>
+            <tr>
+              <td id="table-sale-items-name">
+                <%= item.name %>
+                <%= hidden_field_tag :item_id, item.id, id: "item-sale-id" %>
+              </td>
+              <td><%= item.partno %></td>
+              <td><%= number_field_tag "price",item.price, id: "sell-item-price" %></td>
+              <td><%= item.quantity %></td>
+              <td><%= number_field_tag "quantity","1", id: "sell-item-quantity" %></td>
+              <td><a href="#" class="ui-btn ui-btn-inline">Add to Order</a></td>
+            </tr>
+          <% end %>
+        </tbody>
+  </table>
+</div>
