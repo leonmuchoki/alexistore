@@ -1,8 +1,32 @@
 <div class="row">
   <div class="col-md-8 col-md-offset-2">
-  	<header>
-  	  <h4>List of Items</h4>
-  	  <%= link_to "New Item", new_item_path %>
-  	</header>
+  	<div class="panel panel-default">
+  	  
+  	  <div class="panel-heading">
+  	    <h4>List of Items</h4>
+  	    <%= link_to "New Item", new_item_path %>
+  	  </div>
+
+  	  <div class="panel-body">
+  	  	
+  	  	<!-- Nav tabs -->
+  	  	<ul class="nav nav-tabs">
+  	  	  <li class="active"><a href="#items" data-toggle="tab">ITEMS</a></li>
+  	  	  <li><a href="#item-sale" data-toggle="tab">SELL</a></li>
+  	  	</ul>
+
+  	  	<!-- Tab Panes -->
+  	  	<div class="tab-content">
+  	  	  <div class="tab-pane active" id="items">
+  	  	  	<%= render partial: 'items/all_items' %>
+  	  	  </div>
+  	  	  <div class="tab-pane" id="item-sale">
+  	  	  	<p>nothing yet...</p>
+  	  	  </div>
+  	  	</div>
+
+  	  </div>
+
+  	</div>
   </div>
 </div>
