@@ -1,0 +1,19 @@
+<%= form_for(item) do |item| %>
+  <div class="form-group">
+  	<%= item.label :name %>
+  	<%= item.text_field :name %>
+  </div>
+    <div class="form-group">
+  	<%= item.label :partno, "Part no:" %>
+  	<%= item.text_field :partno %>
+  </div>
+    <div class="form-group">
+  	<%= item.label :quantity %>
+  	<%= item.number_field :quantity %>
+  </div>
+    <div class="form-group">
+  	<%= item.label :price %>
+  	<%= item.number_field :price %>
+  </div>
+  <%= item.submit "Create Item" %>
+<% end %>
